@@ -1,8 +1,7 @@
 import datetime
 import win32com.client as win32
-import re
 
-# today_date = str(datetime.date.today())
+today_date = str(datetime.date.today())
 outlook = win32.Dispatch('outlook.application').GetNamespace("MAPI")
 inbox = outlook.GetDefaultFolder(6)
 message = inbox.Folders.Item("KPI")
@@ -13,12 +12,14 @@ if len(kpi_messages) == 0:
     exit()
 
 emails = []
-i = 0
-c = 0
+
+print(f"Today date is {today_date}")
+date_input = input("Please insect a date (follow above format): ")
+
+this_message = ()
 
 for message in kpi_messages:
     # get some information about each message in a tuple
-    i += 1
     this_message = (
         message.Subject,
         message.SenderEmailAddress,
@@ -28,11 +29,15 @@ for message in kpi_messages:
         message.body,
         message.Attachments
     )
-    # add this tuple of info to a list holding the messages
+
+
     emails.append(this_message)
     split_from_address = message.SenderEmailAddress.partition("-")[2]
-    
-    # show the results
-    print(message.Subject, message.Senton.date(), split_from_address)
 
+    # Print relevant email entry by date
+    # Add option to see all the emails available
+    if str(message.Senton.date()) == date_input:
+        print("am I being checked?")
+        print(message.Subject, message.Senton.date(), split_from_address)
+        exit()
 
