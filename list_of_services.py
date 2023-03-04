@@ -1,0 +1,13 @@
+list_of_services = ["A1 GIS Viewer",
+                    "Alternative Netzbetreiber Datenbank (ANBDB)",
+                    "Corporate Directory (CD)",
+                    "Gesprächsleitfaden (CAST)",
+                    "Home Device und CPE Management",
+                    "Internationale Infrastruktur DB (IIDB)",
+                    "Intranet Material Informations System (IMIS)",
+                    "Lieferantenselbstauskunft (LAUS)",
+                    "Spendenplattform",
+                    "TBSystem (Telefonbuch-Redaktion)",
+                    "WEBGIS Nero",
+                    "Wholesale Portal (WSP)",
+                    "Workforcemanagement (WFM)"]

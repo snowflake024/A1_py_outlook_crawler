@@ -50,6 +50,8 @@ def print_all_emails():
 def fetch_email_attachment(selected_date):
     """fetches a single email attachment to be imported in the KPI Excel spreadsheet"""
 
+    output_filename = f"topaz_report_{selected_date}.xlsx"
+
     for message in items_messages:
 
         if selected_date == str(message.Senton.date()):
@@ -58,16 +60,5 @@ def fetch_email_attachment(selected_date):
             for attachment in message.Attachments:
                 print(f"{attachment.FileName}")
                 if os.path.splitext(attachment.FileName)[1] == ".xlsx":
-                    attachment.SaveAsFile(os.path.join(path, str(attachment.FileName)))
-
-########################################################################################
-
-print("")
-print(f"Today's date is {today_date}\n")
-print("++++++++++++++++++++++++++++++++")
-print_all_emails()
-print("\n++++++++++++++++++++++++++++++++")
-#input_date = str(input("Please choose an email's date to be processed: "))
-input_date = "2022-01-20"
-fetch_email_attachment(input_date)
+                    attachment.SaveAsFile(os.path.join(path, str(output_filename)))
 
