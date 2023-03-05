@@ -1,6 +1,7 @@
 from fetch_email import *
 from import_data import *
 
+# invocation of first part
 print("")
 print(f"Today's date is {today_date}\n")
 print("++++++++++++++++++++++++++++++++")
